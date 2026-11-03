@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Useless Machine · Guo Yilin</title>
+  <link rel="icon" href="favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:title" content="Guo Yilin">
+  <meta property="og:description" content="Computer Science at BiUH — quotes, projects, and a useless machine.">
+  <meta property="og:image" content="https://ritabitta.github.io/my-site/images/og-image.jpg">
+  <meta property="og:url" content="https://ritabitta.github.io/my-site/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    .panel {
+      background: var(--bg-alt);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .switch {
+      display: inline-block;
+      min-width: 170px;
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 980px;
+      cursor: pointer;
+      background: #e5e5ea;
+      color: #1d1d1f;
+      transition: background .15s ease, transform .1s ease;
+    }
+
+    .switch.on {
+      background: #34c759;
+      color: #ffffff;
+      transform: scale(1.03);
+    }
+
+    .status {
+      margin: 1rem 0 0;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      min-height: 1.6rem;
+    }
+
+    .count {
+      margin: 0.35rem 0 0;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .game-btn {
+      width: 100%;
+      max-width: 440px;
+      padding: 2.6rem 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      background: var(--link);
+      color: #ffffff;
+      transition: background .15s ease;
+    }
+
+    .game-btn.waiting { background: #d64b3e; }
+    .game-btn.ready { background: #2e9e5b; }
+
+    .game-result {
+      margin: 1rem 0 0;
+      font-size: 1.15rem;
+      min-height: 1.6rem;
+    }
+
+    .best {
+      margin: 0.35rem 0 0;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <h1>The Useless Machine</h1>
+    <p class="lead">A digital toy that does nothing — and a tiny game that measures how fast you click.</p>
+
+    <h2>1 · The machine</h2>
+    <p>Flip the switch. It will flip itself right back. That is its only job.</p>
+    <div class="panel">
+      <button class="switch" id="switch" type="button">OFF</button>
+      <p class="status" id="machine-status">Ready. Go on, try it.</p>
+      <p class="count">Times it refused: <span id="refuse-count">0</span></p>
+    </div>
+
+    <h2>2 · The game — reaction time</h2>
+    <p>Click to start, wait for the button to turn green, then click again as fast as you can.</p>
+    <div class="panel">
+      <button class="game-btn" id="game-btn" type="button">Start</button>
+      <p class="game-result" id="game-result"></p>
+      <p class="best">Best: <span id="best">—</span> ms</p>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="nav.js"></script>
+  <script src="machine.js"></script>
+</body>
+</html>
